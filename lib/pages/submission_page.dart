@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class AutoPage extends StatelessWidget {
-  const AutoPage({super.key});
+class SubmissionPage extends StatelessWidget {
+  const SubmissionPage({super.key});
 
   // This widget is the root of your application.
   @override
