@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class SubmissionPage extends StatelessWidget {
+  const SubmissionPage({super.key});
 
   // This widget is the root of your application.
   @override

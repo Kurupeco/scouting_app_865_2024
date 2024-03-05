@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/themes/light_theme.dart';
+import 'package:flutter_application_2/state.dart';
 
 void main() {
   runApp(const MyApp());
@@ -8,20 +10,16 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   // This widget is the root of your application.
-  @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        bottomNavigationBar: NavigationBar(
-          //insert destinations here
-          destinations: const [
-          NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
-          NavigationDestination(icon: Icon(Icons.videogame_asset_off), label: 'Auto'),
-          NavigationDestination(icon: Icon(Icons.videogame_asset),label: 'Teleop'),
-          NavigationDestination(icon: Icon(Icons.access_time), label: 'Endgame'),
-          NavigationDestination(icon: Icon(Icons.qr_code), label: 'Submission')
-        ]),
-      ),
-    );
+    return MaterialApp(theme: lightTheme, home: const ScoutingApp());
   }
+}
+
+class ScoutingApp extends StatefulWidget {
+  const ScoutingApp({super.key});
+
+  get changeState => null;
+
+  @override
+  State<ScoutingApp> createState() => ScoutingAppState();
 }
