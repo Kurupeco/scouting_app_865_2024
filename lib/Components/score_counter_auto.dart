@@ -5,12 +5,13 @@ class ScoreCounterAuto extends StatelessWidget {
   final Function changeValueAuto;
   final TextEditingController scoreCounterControllerAuto;
 
-  const ScoreCounterAuto({
-    super.key,
-    required this.scoreCounterAuto,
-    required this.changeValueAuto,
-    required this.scoreCounterControllerAuto,
-  });
+
+  const ScoreCounterAuto(
+      {super.key,
+      required this.scoreCounterAuto,
+      required this.changeValueAuto,
+      required this.scoreCounterControllerAuto,
+});
 
   @override
   Widget build(BuildContext context) {

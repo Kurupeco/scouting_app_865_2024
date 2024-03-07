@@ -33,7 +33,9 @@ class ScoutingAppState extends State<ScoutingApp> {
   //TELEOP
   static int teleopAmpScored = 0;
   static int teleopSpeakerScored = 0;
-  static bool? teleopMobility = false;
+  static bool? teleopDefence = false;
+  static bool? teleopFoul = false;
+  static bool? teleopTechFoul = false;
 
   //text editing controllers
   //AUTO
@@ -64,26 +66,11 @@ class ScoutingAppState extends State<ScoutingApp> {
     UpdateShouldNotify;
   }
 
-  static incrementTeleopSpeaker(int incValue, bool isAmplified) {
-  if (isAmplified) {
-    // If amplified, add 5 if incValue is positive, subtract 1 if incValue is negative
-    if (incValue > 0) {
-      teleopSpeakerScored += 5;
-    } else {
-      teleopSpeakerScored -= 5;
-    }
-  } else {
-    // If not amplified, add 2 if incValue is positive, subtract 1 if incValue is negative
-    if (incValue > 0) {
-      teleopSpeakerScored += 2;
-    } else {
-      teleopSpeakerScored -= 2;
-    }
+  static incrementTeleopSpeaker(int incValue) {
+    teleopSpeakerScored += incValue;
+    teleopSpeakerController.text = '$teleopSpeakerScored';
+    UpdateShouldNotify;
   }
-  teleopSpeakerController.text = '$teleopSpeakerScored';
-  UpdateShouldNotify;
-}
-
 
   
   @override
