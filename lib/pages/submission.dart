@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:scouting_app_865_2024/util/gsheets.dart';
 import 'package:scouting_app_865_2024/util/state.dart';
+import 'package:scouting_app_865_2024/util/themes.dart';
 
 class SubmissionPage extends StatelessWidget {
   const SubmissionPage({super.key});
@@ -8,13 +9,25 @@ class SubmissionPage extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        ElevatedButton(onPressed: () {
-          GSheetsUtil.addRow(ScoutingAppState.getData());
-        }, child: const Text("Send Data"))
-      ]
-    );
+    return Scaffold(
+        appBar: AppBar(
+          title: Text(
+            'Submission',
+            style: TextStyle(color: Colors.white),
+          ),
+          centerTitle: true,
+          backgroundColor: lightTheme.colorScheme.primary,
+        ),
+        body: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Center(
+                child: ElevatedButton(
+                    onPressed: () {
+                      GSheetsUtil.addRow(ScoutingAppState.getData());
+                    },
+                    child: const Text("Send Data")),
+              )
+            ]));
   }
 }
