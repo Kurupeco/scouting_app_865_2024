@@ -59,16 +59,13 @@ class _HomePageState extends State<HomePage> {
         body: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              //title
-              const Text('Team 865 Scouting App 2024'),
-              const SizedBox(height: 50),
               //does not use the custom text field widget because that widget does not work
               const Text('Scouter Name'),
               SizedBox(
                   width: 300,
                   child: TextFormField(
                       controller: ScoutingAppState.nameController)),
-              const SizedBox(height: 8),
+              const SizedBox(height: 16),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -98,15 +95,18 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(height: 8),
               const Text('Robot Position'),
               const SizedBox(height: 8),
-              RadioButton(
-                  text1: 'Blue 1',
-                  text2: 'Red 1',
-                  text3: 'Blue 2',
-                  text4: 'Red 2',
-                  text5: 'Blue 3',
-                  text6: 'Red 3',
-                  buttonValue: ScoutingAppState.robotPosition,
-                  changeState: updateRobotPosition),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 12),
+                child: RadioButton(
+                    text1: 'Blue 1',
+                    text2: 'Red 1',
+                    text3: 'Blue 2',
+                    text4: 'Red 2',
+                    text5: 'Blue 3',
+                    text6: 'Red 3',
+                    buttonValue: ScoutingAppState.robotPosition,
+                    changeState: updateRobotPosition),
+              ),
               Image.asset('images/playing_field.jpg')
             ]));
   }

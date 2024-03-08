@@ -105,7 +105,7 @@ class _TeleopPageState extends State<TeleopPage> {
                     Container(
                         width: 200,
                         child: CheckmarkButton(
-                            isChecked: ScoutingAppState.teleopDefense,
+                            isChecked: ScoutingAppState.foul,
                             changeState: changeTeleopDefense,
                             checkboxTitle: 'Foul',
                             checkboxSubtitle: '')),
@@ -117,7 +117,7 @@ class _TeleopPageState extends State<TeleopPage> {
                     Container(
                         width: 200,
                         child: CheckmarkButton(
-                            isChecked: ScoutingAppState.teleopDefense,
+                            isChecked: ScoutingAppState.techFoul,
                             changeState: changeTeleopDefense,
                             checkboxTitle: 'Tech Foul',
                             checkboxSubtitle: '')),

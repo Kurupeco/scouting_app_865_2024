@@ -44,7 +44,8 @@ class ScoutingAppState extends State<ScoutingApp> {
   static bool teleopGroundIntake9 = false;
   static bool teleopGroundIntake10 = false;
   static bool teleopGroundIntake11 = false;
-
+  static bool techFoul = false;
+  static bool foul = false;
   //endgame
   static bool climb = false;
   static bool park = false;
@@ -58,6 +59,7 @@ class ScoutingAppState extends State<ScoutingApp> {
   static var nameController = TextEditingController();
   static var matchController = TextEditingController();
   static var teamController = TextEditingController();
+  static var commentsController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {

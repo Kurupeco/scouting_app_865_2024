@@ -10,24 +10,34 @@ class SubmissionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text(
-            'Submission',
-            style: TextStyle(color: Colors.white),
-          ),
-          centerTitle: true,
-          backgroundColor: lightTheme.colorScheme.primary,
+      appBar: AppBar(
+        title: Text(
+          'Submission',
+          style: TextStyle(color: Colors.white),
         ),
-        body: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Center(
+        centerTitle: true,
+        backgroundColor: lightTheme.colorScheme.primary,
+      ),
+      body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            const Text('Comments'),
+            SizedBox(
+                width: 350,
+                child: TextFormField(
+                    controller: ScoutingAppState.commentsController,
+                    keyboardType: TextInputType.text)),
+            Center(
+              child: Padding(
+                padding: const EdgeInsets.only(top: 30.0),
                 child: ElevatedButton(
                     onPressed: () {
                       GSheetsUtil.addRow(ScoutingAppState.getData());
                     },
                     child: const Text("Send Data")),
-              )
-            ]));
+              ),
+            ),
+          ]),
+    );
   }
 }
